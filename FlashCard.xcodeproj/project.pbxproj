@@ -53,6 +53,10 @@
 			isa = PBXGroup;
 			children = (
 				64AE4F7C25D683EE00E78261 /* FlashCardApp.swift */,
+				64AE4F9225D6853D00E78261 /* Interactors */,
+				64AE4F8D25D684DC00E78261 /* Models */,
+				64AE4F9325D6854800E78261 /* Repositories */,
+				64AE4F8E25D684E500E78261 /* Views */,
 				64AE4F7E25D683EE00E78261 /* ContentView.swift */,
 				64AE4F8025D683F000E78261 /* Assets.xcassets */,
 				64AE4F8525D683F000E78261 /* Info.plist */,
@@ -67,6 +71,42 @@
 				64AE4F8325D683F000E78261 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		64AE4F8D25D684DC00E78261 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		64AE4F8E25D684E500E78261 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				64AE4F9025D684FF00E78261 /* Shared */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		64AE4F9025D684FF00E78261 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		64AE4F9225D6853D00E78261 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		64AE4F9325D6854800E78261 /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
