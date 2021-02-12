@@ -3,23 +3,87 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3C139789EC49FB2F66CC0B65 /* Pods_FlashCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7804F6E0797B49F1900BA69E /* Pods_FlashCard.framework */; };
+		6447AE9625D6AC7B0050BD36 /* ScreenMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9525D6AC7B0050BD36 /* ScreenMode.swift */; };
+		6447AE9A25D6ACD70050BD36 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9925D6ACD70050BD36 /* MainButton.swift */; };
+		6447AE9D25D6B0CF0050BD36 /* HeadedTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */; };
+		6447AEA125D6B4340050BD36 /* FlashCardListScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AEA025D6B4340050BD36 /* FlashCardListScreen.swift */; };
+		6447AEA525D6BA110050BD36 /* SessionScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AEA425D6BA110050BD36 /* SessionScreen.swift */; };
+		6447AEA825D6C2960050BD36 /* FeedBackButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AEA725D6C2960050BD36 /* FeedBackButton.swift */; };
 		64AE4F7D25D683EE00E78261 /* FlashCardApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE4F7C25D683EE00E78261 /* FlashCardApp.swift */; };
-		64AE4F7F25D683EE00E78261 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE4F7E25D683EE00E78261 /* ContentView.swift */; };
 		64AE4F8125D683F000E78261 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64AE4F8025D683F000E78261 /* Assets.xcassets */; };
 		64AE4F8425D683F000E78261 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64AE4F8325D683F000E78261 /* Preview Assets.xcassets */; };
+		64AE4F9825D685E800E78261 /* FlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE4F9725D685E800E78261 /* FlashCard.swift */; };
+		64AE4FA325D6885600E78261 /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE4FA225D6885600E78261 /* HomeScreen.swift */; };
+		64AE4FA925D6894500E78261 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AE4FA825D6894500E78261 /* AppState.swift */; };
+		64B3EA4625D6D8D600C71E55 /* DeckDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B3EA4525D6D8D600C71E55 /* DeckDetailScreen.swift */; };
+		64B3EA4A25D6FD4000C71E55 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 64B3EA4925D6FD4000C71E55 /* GoogleService-Info.plist */; };
+		64C2E9C925D6FE7700540536 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9C825D6FE7700540536 /* LoginScreen.swift */; };
+		64C2E9CD25D7010F00540536 /* FlashCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9CC25D7010F00540536 /* FlashCardsRepository.swift */; };
+		64C2E9D025D7013500540536 /* WebResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9CF25D7013500540536 /* WebResponse.swift */; };
+		64C2E9E425D7021900540536 /* AuthInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9E325D7021900540536 /* AuthInteractorImplementation.swift */; };
+		64C2E9F525D7028400540536 /* InteractorContainers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9F425D7028400540536 /* InteractorContainers.swift */; };
+		64C2E9F825D7121700540536 /* FirebaseFlashCardsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9F725D7121700540536 /* FirebaseFlashCardsRepository.swift */; };
+		64C2E9FB25D7127C00540536 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9FA25D7127C00540536 /* UsersRepository.swift */; };
+		64C2E9FE25D712C000540536 /* FirebaseUsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2E9FD25D712C000540536 /* FirebaseUsersRepository.swift */; };
+		64C2EA2A25D717D100540536 /* RestFlashCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2EA2925D717D100540536 /* RestFlashCard.swift */; };
+		64C2EA2D25D7183D00540536 /* RestDeck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2EA2C25D7183D00540536 /* RestDeck.swift */; };
+		64C2EA3425D71B0000540536 /* DeckInteractorImplementation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2EA3325D71B0000540536 /* DeckInteractorImplementation.swift */; };
+		64C2EA4E25D757A500540536 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C2EA4D25D757A500540536 /* Feedback.swift */; };
+		64DB821425D69EAC0040C9F7 /* Deck.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB821325D69EAC0040C9F7 /* Deck.swift */; };
+		64DB821825D69F400040C9F7 /* MockedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB821725D69F400040C9F7 /* MockedData.swift */; };
+		64DB821B25D6A2360040C9F7 /* FlashCardCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB821A25D6A2360040C9F7 /* FlashCardCell.swift */; };
+		64DB821E25D6A2E80040C9F7 /* FlashCardCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB821D25D6A2E80040C9F7 /* FlashCardCategory.swift */; };
+		64DB822125D6A38E0040C9F7 /* CategoryPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB822025D6A38E0040C9F7 /* CategoryPill.swift */; };
+		64DB822525D6A6170040C9F7 /* DeckCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB822425D6A6170040C9F7 /* DeckCell.swift */; };
+		64DB822825D6A93F0040C9F7 /* FloatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB822725D6A93F0040C9F7 /* FloatingButton.swift */; };
+		64DB822B25D6AAE90040C9F7 /* FlashCardDetailScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64DB822A25D6AAE90040C9F7 /* FlashCardDetailScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1999E76ED06D57A8D512E5D0 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
+		247730046C552DAC92DB030F /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
+		6447AE9525D6AC7B0050BD36 /* ScreenMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMode.swift; sourceTree = "<group>"; };
+		6447AE9925D6ACD70050BD36 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadedTextEditor.swift; sourceTree = "<group>"; };
+		6447AEA025D6B4340050BD36 /* FlashCardListScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardListScreen.swift; sourceTree = "<group>"; };
+		6447AEA425D6BA110050BD36 /* SessionScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionScreen.swift; sourceTree = "<group>"; };
+		6447AEA725D6C2960050BD36 /* FeedBackButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedBackButton.swift; sourceTree = "<group>"; };
 		64AE4F7925D683EE00E78261 /* FlashCard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlashCard.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64AE4F7C25D683EE00E78261 /* FlashCardApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardApp.swift; sourceTree = "<group>"; };
-		64AE4F7E25D683EE00E78261 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64AE4F8025D683F000E78261 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64AE4F8325D683F000E78261 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64AE4F8525D683F000E78261 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		64AE4F9725D685E800E78261 /* FlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCard.swift; sourceTree = "<group>"; };
+		64AE4FA225D6885600E78261 /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
+		64AE4FA825D6894500E78261 /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
+		64B3EA4525D6D8D600C71E55 /* DeckDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckDetailScreen.swift; sourceTree = "<group>"; };
+		64B3EA4925D6FD4000C71E55 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		64C2E9C825D6FE7700540536 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		64C2E9CC25D7010F00540536 /* FlashCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardsRepository.swift; sourceTree = "<group>"; };
+		64C2E9CF25D7013500540536 /* WebResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebResponse.swift; sourceTree = "<group>"; };
+		64C2E9E325D7021900540536 /* AuthInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthInteractorImplementation.swift; sourceTree = "<group>"; };
+		64C2E9F425D7028400540536 /* InteractorContainers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractorContainers.swift; sourceTree = "<group>"; };
+		64C2E9F725D7121700540536 /* FirebaseFlashCardsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFlashCardsRepository.swift; sourceTree = "<group>"; };
+		64C2E9FA25D7127C00540536 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		64C2E9FD25D712C000540536 /* FirebaseUsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUsersRepository.swift; sourceTree = "<group>"; };
+		64C2EA2925D717D100540536 /* RestFlashCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestFlashCard.swift; sourceTree = "<group>"; };
+		64C2EA2C25D7183D00540536 /* RestDeck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestDeck.swift; sourceTree = "<group>"; };
+		64C2EA3325D71B0000540536 /* DeckInteractorImplementation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckInteractorImplementation.swift; sourceTree = "<group>"; };
+		64C2EA4D25D757A500540536 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
+		64DB821325D69EAC0040C9F7 /* Deck.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Deck.swift; sourceTree = "<group>"; };
+		64DB821725D69F400040C9F7 /* MockedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockedData.swift; sourceTree = "<group>"; };
+		64DB821A25D6A2360040C9F7 /* FlashCardCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCell.swift; sourceTree = "<group>"; };
+		64DB821D25D6A2E80040C9F7 /* FlashCardCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardCategory.swift; sourceTree = "<group>"; };
+		64DB822025D6A38E0040C9F7 /* CategoryPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPill.swift; sourceTree = "<group>"; };
+		64DB822425D6A6170040C9F7 /* DeckCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckCell.swift; sourceTree = "<group>"; };
+		64DB822725D6A93F0040C9F7 /* FloatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatingButton.swift; sourceTree = "<group>"; };
+		64DB822A25D6AAE90040C9F7 /* FlashCardDetailScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardDetailScreen.swift; sourceTree = "<group>"; };
+		7804F6E0797B49F1900BA69E /* Pods_FlashCard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FlashCard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,17 +91,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C139789EC49FB2F66CC0B65 /* Pods_FlashCard.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6447AE9425D6AC670050BD36 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6447AE9525D6AC7B0050BD36 /* ScreenMode.swift */,
+				64C2E9CF25D7013500540536 /* WebResponse.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6447AE9F25D6B4220050BD36 /* FlashCardList */ = {
+			isa = PBXGroup;
+			children = (
+				6447AEA025D6B4340050BD36 /* FlashCardListScreen.swift */,
+			);
+			path = FlashCardList;
+			sourceTree = "<group>";
+		};
 		64AE4F7025D683EE00E78261 = {
 			isa = PBXGroup;
 			children = (
 				64AE4F7B25D683EE00E78261 /* FlashCard */,
 				64AE4F7A25D683EE00E78261 /* Products */,
+				80E220734AEB26D387E67F33 /* Pods */,
+				E0042412AEF9B3FD4AAA67DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,10 +140,11 @@
 				64AE4F9225D6853D00E78261 /* Interactors */,
 				64AE4F8D25D684DC00E78261 /* Models */,
 				64AE4F9325D6854800E78261 /* Repositories */,
+				6447AE9425D6AC670050BD36 /* Utils */,
 				64AE4F8E25D684E500E78261 /* Views */,
-				64AE4F7E25D683EE00E78261 /* ContentView.swift */,
 				64AE4F8025D683F000E78261 /* Assets.xcassets */,
 				64AE4F8525D683F000E78261 /* Info.plist */,
+				64B3EA4925D6FD4000C71E55 /* GoogleService-Info.plist */,
 				64AE4F8225D683F000E78261 /* Preview Content */,
 			);
 			path = FlashCard;
@@ -76,6 +161,13 @@
 		64AE4F8D25D684DC00E78261 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				64C2EA2825D717C500540536 /* RestObjects */,
+				64AE4FA825D6894500E78261 /* AppState.swift */,
+				64DB821325D69EAC0040C9F7 /* Deck.swift */,
+				64C2EA4D25D757A500540536 /* Feedback.swift */,
+				64AE4F9725D685E800E78261 /* FlashCard.swift */,
+				64DB821D25D6A2E80040C9F7 /* FlashCardCategory.swift */,
+				64DB821725D69F400040C9F7 /* MockedData.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -83,6 +175,12 @@
 		64AE4F8E25D684E500E78261 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				64C2E9C725D6FE6D00540536 /* Login */,
+				64B3EA4425D6D8BF00C71E55 /* DeckDetail */,
+				64AE4FA125D6884500E78261 /* Home */,
+				64DB822D25D6AAF00040C9F7 /* FlashCardDetail */,
+				6447AE9F25D6B4220050BD36 /* FlashCardList */,
+				64B3EA4325D6D8B600C71E55 /* Session */,
 				64AE4F9025D684FF00E78261 /* Shared */,
 			);
 			path = Views;
@@ -91,6 +189,13 @@
 		64AE4F9025D684FF00E78261 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				64DB821A25D6A2360040C9F7 /* FlashCardCell.swift */,
+				64DB822025D6A38E0040C9F7 /* CategoryPill.swift */,
+				64DB822425D6A6170040C9F7 /* DeckCell.swift */,
+				64DB822725D6A93F0040C9F7 /* FloatingButton.swift */,
+				6447AE9925D6ACD70050BD36 /* MainButton.swift */,
+				6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */,
+				6447AEA725D6C2960050BD36 /* FeedBackButton.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -98,6 +203,9 @@
 		64AE4F9225D6853D00E78261 /* Interactors */ = {
 			isa = PBXGroup;
 			children = (
+				64C2E9E325D7021900540536 /* AuthInteractorImplementation.swift */,
+				64C2EA3325D71B0000540536 /* DeckInteractorImplementation.swift */,
+				64C2E9F425D7028400540536 /* InteractorContainers.swift */,
 			);
 			path = Interactors;
 			sourceTree = "<group>";
@@ -105,8 +213,78 @@
 		64AE4F9325D6854800E78261 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				64C2E9CC25D7010F00540536 /* FlashCardsRepository.swift */,
+				64C2E9F725D7121700540536 /* FirebaseFlashCardsRepository.swift */,
+				64C2E9FA25D7127C00540536 /* UsersRepository.swift */,
+				64C2E9FD25D712C000540536 /* FirebaseUsersRepository.swift */,
 			);
 			path = Repositories;
+			sourceTree = "<group>";
+		};
+		64AE4FA125D6884500E78261 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				64AE4FA225D6885600E78261 /* HomeScreen.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		64B3EA4325D6D8B600C71E55 /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				6447AEA425D6BA110050BD36 /* SessionScreen.swift */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		64B3EA4425D6D8BF00C71E55 /* DeckDetail */ = {
+			isa = PBXGroup;
+			children = (
+				64B3EA4525D6D8D600C71E55 /* DeckDetailScreen.swift */,
+			);
+			path = DeckDetail;
+			sourceTree = "<group>";
+		};
+		64C2E9C725D6FE6D00540536 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				64C2E9C825D6FE7700540536 /* LoginScreen.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		64C2EA2825D717C500540536 /* RestObjects */ = {
+			isa = PBXGroup;
+			children = (
+				64C2EA2925D717D100540536 /* RestFlashCard.swift */,
+				64C2EA2C25D7183D00540536 /* RestDeck.swift */,
+			);
+			path = RestObjects;
+			sourceTree = "<group>";
+		};
+		64DB822D25D6AAF00040C9F7 /* FlashCardDetail */ = {
+			isa = PBXGroup;
+			children = (
+				64DB822A25D6AAE90040C9F7 /* FlashCardDetailScreen.swift */,
+			);
+			path = FlashCardDetail;
+			sourceTree = "<group>";
+		};
+		80E220734AEB26D387E67F33 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				247730046C552DAC92DB030F /* Pods-FlashCard.debug.xcconfig */,
+				1999E76ED06D57A8D512E5D0 /* Pods-FlashCard.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E0042412AEF9B3FD4AAA67DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7804F6E0797B49F1900BA69E /* Pods_FlashCard.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -116,9 +294,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 64AE4F8825D683F000E78261 /* Build configuration list for PBXNativeTarget "FlashCard" */;
 			buildPhases = (
+				664D300819C4523BB96A4153 /* [CP] Check Pods Manifest.lock */,
 				64AE4F7525D683EE00E78261 /* Sources */,
 				64AE4F7625D683EE00E78261 /* Frameworks */,
 				64AE4F7725D683EE00E78261 /* Resources */,
+				4C6DD19B47A7AD8A7FD6D480 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -168,18 +348,90 @@
 			files = (
 				64AE4F8425D683F000E78261 /* Preview Assets.xcassets in Resources */,
 				64AE4F8125D683F000E78261 /* Assets.xcassets in Resources */,
+				64B3EA4A25D6FD4000C71E55 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C6DD19B47A7AD8A7FD6D480 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FlashCard/Pods-FlashCard-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		664D300819C4523BB96A4153 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FlashCard-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		64AE4F7525D683EE00E78261 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64AE4F7F25D683EE00E78261 /* ContentView.swift in Sources */,
+				6447AE9D25D6B0CF0050BD36 /* HeadedTextEditor.swift in Sources */,
+				64DB821E25D6A2E80040C9F7 /* FlashCardCategory.swift in Sources */,
+				64C2EA2A25D717D100540536 /* RestFlashCard.swift in Sources */,
+				6447AEA825D6C2960050BD36 /* FeedBackButton.swift in Sources */,
+				64DB822B25D6AAE90040C9F7 /* FlashCardDetailScreen.swift in Sources */,
+				6447AE9A25D6ACD70050BD36 /* MainButton.swift in Sources */,
+				64DB821425D69EAC0040C9F7 /* Deck.swift in Sources */,
+				64AE4FA325D6885600E78261 /* HomeScreen.swift in Sources */,
+				64C2EA3425D71B0000540536 /* DeckInteractorImplementation.swift in Sources */,
+				64C2E9E425D7021900540536 /* AuthInteractorImplementation.swift in Sources */,
+				64B3EA4625D6D8D600C71E55 /* DeckDetailScreen.swift in Sources */,
+				64DB821825D69F400040C9F7 /* MockedData.swift in Sources */,
+				64C2E9C925D6FE7700540536 /* LoginScreen.swift in Sources */,
+				64DB822125D6A38E0040C9F7 /* CategoryPill.swift in Sources */,
+				6447AEA125D6B4340050BD36 /* FlashCardListScreen.swift in Sources */,
+				64C2E9CD25D7010F00540536 /* FlashCardsRepository.swift in Sources */,
+				64C2E9F825D7121700540536 /* FirebaseFlashCardsRepository.swift in Sources */,
+				64C2E9D025D7013500540536 /* WebResponse.swift in Sources */,
+				64AE4FA925D6894500E78261 /* AppState.swift in Sources */,
+				64C2E9F525D7028400540536 /* InteractorContainers.swift in Sources */,
+				64C2E9FE25D712C000540536 /* FirebaseUsersRepository.swift in Sources */,
+				64C2E9FB25D7127C00540536 /* UsersRepository.swift in Sources */,
+				64DB822525D6A6170040C9F7 /* DeckCell.swift in Sources */,
+				64C2EA4E25D757A500540536 /* Feedback.swift in Sources */,
+				64DB821B25D6A2360040C9F7 /* FlashCardCell.swift in Sources */,
+				64C2EA2D25D7183D00540536 /* RestDeck.swift in Sources */,
+				64AE4F9825D685E800E78261 /* FlashCard.swift in Sources */,
+				6447AE9625D6AC7B0050BD36 /* ScreenMode.swift in Sources */,
+				6447AEA525D6BA110050BD36 /* SessionScreen.swift in Sources */,
 				64AE4F7D25D683EE00E78261 /* FlashCardApp.swift in Sources */,
+				64DB822825D6A93F0040C9F7 /* FloatingButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -304,11 +556,14 @@
 		};
 		64AE4F8925D683F000E78261 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 247730046C552DAC92DB030F /* Pods-FlashCard.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCard/Preview Content\"";
+				DEVELOPMENT_TEAM = F3QT4Z4R2K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlashCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
@@ -325,11 +580,14 @@
 		};
 		64AE4F8A25D683F000E78261 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1999E76ED06D57A8D512E5D0 /* Pods-FlashCard.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"FlashCard/Preview Content\"";
+				DEVELOPMENT_TEAM = F3QT4Z4R2K;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = FlashCard/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
