@@ -76,6 +76,7 @@ class DeckInteractorImplementation: DeckInteractor {
 		guard let currentUser = Auth.auth().currentUser else { return }
 		card.boxNumber = feedback.boxNumber
 		card.lastUpdateDate = feedback.lastUpdateDate
+		deck.objectWillChange.send()
 		flashCardsRepository.update(cardID: card.id, deckID: deck.id, feedback: feedback, for: currentUser.uid) { response in
 			// TODO: (Quentin Cornu) To handle
 		}
@@ -83,12 +84,7 @@ class DeckInteractorImplementation: DeckInteractor {
 	
 	func getCardsToRecall(deck: Deck) -> [FlashCard] {
 		let now = Date()
-		return deck.cards.filter { nextDate(card: $0) < now }
-	}
-	
-	private func nextDate(card: FlashCard) -> Date {
-		let timeInterval = TimeInterval(60 * 60 * 24 * (card.boxNumber - 1))
-		return card.lastUpdateDate + timeInterval
+		return deck.cards.filter { $0.nextDate() < now }
 	}
 	
 	private func map(flashCard: [FlashCard]) -> [RestFlashCard] {

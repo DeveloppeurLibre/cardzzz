@@ -18,8 +18,11 @@ struct DeckCell: View {
 				Text(deck.name)
 					.font(.title3)
 					.fontWeight(.semibold)
-				Text("\(deck.cards.count) cartes")
-					.foregroundColor(.gray)
+				HStack(spacing: 16) {
+					Text("\(deck.cards.count) cartes")
+					DeckTimelineView(deck: deck)
+				}
+				.foregroundColor(.gray)
 			}
 			Spacer()
 			Button(action: {

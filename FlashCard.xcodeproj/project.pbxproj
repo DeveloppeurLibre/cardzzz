@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3C139789EC49FB2F66CC0B65 /* Pods_FlashCard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7804F6E0797B49F1900BA69E /* Pods_FlashCard.framework */; };
+		6446B28225DABF0F00965EA3 /* DeckTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6446B28125DABF0F00965EA3 /* DeckTimelineView.swift */; };
 		6447AE9625D6AC7B0050BD36 /* ScreenMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9525D6AC7B0050BD36 /* ScreenMode.swift */; };
 		6447AE9A25D6ACD70050BD36 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9925D6ACD70050BD36 /* MainButton.swift */; };
 		6447AE9D25D6B0CF0050BD36 /* HeadedTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */; };
@@ -47,6 +48,7 @@
 /* Begin PBXFileReference section */
 		1999E76ED06D57A8D512E5D0 /* Pods-FlashCard.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.release.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.release.xcconfig"; sourceTree = "<group>"; };
 		247730046C552DAC92DB030F /* Pods-FlashCard.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlashCard.debug.xcconfig"; path = "Target Support Files/Pods-FlashCard/Pods-FlashCard.debug.xcconfig"; sourceTree = "<group>"; };
+		6446B28125DABF0F00965EA3 /* DeckTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckTimelineView.swift; sourceTree = "<group>"; };
 		6447AE9525D6AC7B0050BD36 /* ScreenMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenMode.swift; sourceTree = "<group>"; };
 		6447AE9925D6ACD70050BD36 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadedTextEditor.swift; sourceTree = "<group>"; };
@@ -189,13 +191,14 @@
 		64AE4F9025D684FF00E78261 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				64DB822425D6A6170040C9F7 /* DeckCell.swift */,
 				64DB821A25D6A2360040C9F7 /* FlashCardCell.swift */,
 				64DB822025D6A38E0040C9F7 /* CategoryPill.swift */,
-				64DB822425D6A6170040C9F7 /* DeckCell.swift */,
 				64DB822725D6A93F0040C9F7 /* FloatingButton.swift */,
 				6447AE9925D6ACD70050BD36 /* MainButton.swift */,
 				6447AE9C25D6B0CF0050BD36 /* HeadedTextEditor.swift */,
 				6447AEA725D6C2960050BD36 /* FeedBackButton.swift */,
+				6446B28125DABF0F00965EA3 /* DeckTimelineView.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 				64C2EA4E25D757A500540536 /* Feedback.swift in Sources */,
 				64DB821B25D6A2360040C9F7 /* FlashCardCell.swift in Sources */,
 				64C2EA2D25D7183D00540536 /* RestDeck.swift in Sources */,
+				6446B28225DABF0F00965EA3 /* DeckTimelineView.swift in Sources */,
 				64AE4F9825D685E800E78261 /* FlashCard.swift in Sources */,
 				6447AE9625D6AC7B0050BD36 /* ScreenMode.swift in Sources */,
 				6447AEA525D6BA110050BD36 /* SessionScreen.swift in Sources */,
