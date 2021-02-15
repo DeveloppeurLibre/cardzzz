@@ -1,0 +1,17 @@
+//
+//  RestFlashCard.swift
+//  FlashCard
+//
+//  Created by Quentin Cornu on 12/02/2021.
+//
+
+import Foundation
+
+struct RestFlashCard {
+	let id: String
+	let question: String
+	let response: String
+	let categoryID: String
+	let boxNumber: Int
+	let lastUpdateDate: Date
+}
