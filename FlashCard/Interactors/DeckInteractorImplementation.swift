@@ -74,17 +74,20 @@ class DeckInteractorImplementation: DeckInteractor {
 	
 	func update(feedback: Feedback, for card: FlashCard, in deck: Deck) {
 		guard let currentUser = Auth.auth().currentUser else { return }
+		card.boxNumber = feedback.boxNumber
+		card.lastUpdateDate = feedback.lastUpdateDate
 		flashCardsRepository.update(cardID: card.id, deckID: deck.id, feedback: feedback, for: currentUser.uid) { response in
 			// TODO: (Quentin Cornu) To handle
 		}
 	}
 	
 	func getCardsToRecall(deck: Deck) -> [FlashCard] {
-		deck.cards.filter { nextDate(card: $0) > Date() }
+		let now = Date()
+		return deck.cards.filter { nextDate(card: $0) < now }
 	}
 	
 	private func nextDate(card: FlashCard) -> Date {
-		let timeInterval = TimeInterval(60 * 60 * card.boxNumber)
+		let timeInterval = TimeInterval(60 * 60 * 24 * (card.boxNumber - 1))
 		return card.lastUpdateDate + timeInterval
 	}
 	
@@ -98,7 +101,7 @@ class DeckInteractorImplementation: DeckInteractor {
 					response: card.response,
 					categoryID: card.category?.id.uuidString ?? "",
 					boxNumber: card.boxNumber,
-					lastUpdateDate: card.lastUpdateDate
+					lastUpdateDate: Timestamp(date: card.lastUpdateDate)
 				)
 			)
 		}
@@ -114,7 +117,7 @@ class DeckInteractorImplementation: DeckInteractor {
 					question: restCard.question,
 					response: restCard.response,
 					boxNumber: restCard.boxNumber,
-					lastUpdateDate: restCard.lastUpdateDate
+					lastUpdateDate: restCard.lastUpdateDate.dateValue()
 				)
 			)
 		}
