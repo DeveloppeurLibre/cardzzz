@@ -54,6 +54,17 @@ class FirebaseFlashCardsRepository: FlashCardsRepository {
 		}
 	}
 	
+	func update(card: RestFlashCard, in deck: RestDeck, for userID: String, completion: @escaping (WebResponse<Void>) -> Void) {
+		let document = database.collection("users").document(userID).collection("decks").document(deck.id).collection("cards").document(card.id)
+		
+		document.setData([
+			"question": card.question,
+			"response": card.response,
+			"boxNumber": card.boxNumber,
+			"lastUpdateDate": card.lastUpdateDate
+		])
+	}
+	
 	func update(deck: RestDeck, for userID: String, completion: @escaping (WebResponse<Void>) -> Void) {
 		let document = database.collection("users").document(userID).collection("decks").document(deck.id)
 		

@@ -10,6 +10,7 @@ import Firebase
 
 protocol DeckInteractor {
 	func loadDecks(completion: @escaping (WebResponse<[Deck]>) -> Void)
+	func update(card: FlashCard, in deck: Deck)
 	func update(deck: Deck)
 	func remove(deck: Deck)
 	func update(feedback: Feedback, for card: FlashCard, in deck: Deck)
@@ -43,6 +44,26 @@ class DeckInteractorImplementation: DeckInteractor {
 				case .failure(error: let error):
 					print(error.localizedDescription)
 			}
+		}
+	}
+	
+	func update(card: FlashCard, in deck: Deck) {
+		guard let currentUser = Auth.auth().currentUser else { return }
+		let restDeck = RestDeck(
+			id: deck.id,
+			name: deck.name,
+			cards: map(flashCard: deck.cards)
+		)
+		let restCard = RestFlashCard(
+			id: card.id,
+			question: card.question,
+			response: card.response,
+			categoryID: "",
+			boxNumber: card.boxNumber,
+			lastUpdateDate: Timestamp(date: card.lastUpdateDate)
+		)
+		flashCardsRepository.update(card: restCard, in: restDeck, for: currentUser.uid) { response in
+			// TODO: (Quentin Cornu) To handle
 		}
 	}
 	

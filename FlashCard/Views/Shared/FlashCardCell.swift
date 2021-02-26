@@ -9,7 +9,9 @@ import SwiftUI
 
 struct FlashCardCell: View {
 	
-	let card: FlashCard
+	@ObservedObject var card: FlashCard
+	@ObservedObject var deck: Deck
+	@State private var isEditionScreenPresented = false
 	
     var body: some View {
 		HStack {
@@ -23,8 +25,13 @@ struct FlashCardCell: View {
 			.lineLimit(1)
 			Spacer()
 			VStack(alignment: .trailing) {
-				Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+				Button(action: {
+					isEditionScreenPresented.toggle()
+				}, label: {
 					Image(systemName: "pencil.circle")
+				})
+				.sheet(isPresented: $isEditionScreenPresented, content: {
+					FlashCardDetailScreen(mode: .edition, categories: [], card: card, deck: deck)
 				})
 				if let category = card.category {
 					CategoryPill(category: category, format: .caption)
@@ -38,8 +45,9 @@ struct FlashCardCell: View {
 struct FlashCardCell_Previews: PreviewProvider {
 	
 	static let card = FlashCard.mockedData[0]
+	static var fakeDeck = Deck(id: "fakeID", name: "Fake Name")
 	
     static var previews: some View {
-		FlashCardCell(card: card)
+		FlashCardCell(card: card, deck: fakeDeck)
     }
 }
