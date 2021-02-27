@@ -35,7 +35,7 @@ struct FlashCardListScreen: View {
 			.padding()
 			.sheet(isPresented: $isPresentingCardCreationScreen, content: {
 				FlashCardDetailScreen(
-					mode: .edition,
+					mode: .presentation(deck: deck),
 					categories: [],
 					card: FlashCard(id: UUID().uuidString, question: "", response: "", boxNumber: 1, lastUpdateDate: Date()),
 					deck: deck

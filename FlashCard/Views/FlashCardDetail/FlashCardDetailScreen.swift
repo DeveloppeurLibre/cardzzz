@@ -67,7 +67,7 @@ struct FlashCardDetailScreen: View {
 			case .edition:
 				return "Save"
 			case .presentation:
-				return "Edit"
+				return "Add"
 		}
 	}
 }
