@@ -13,6 +13,8 @@ class FirebaseFlashCardsRepository: FlashCardsRepository {
 	let database = Firestore.firestore()
 	
 	func loadDecks(for userID: String, completion: @escaping (WebResponse<[RestDeck]>) -> Void) {
+		
+		print(userID)
 		let collection = database.collection("users").document(userID).collection("decks")
 		collection.getDocuments { (querySnapshot, error) in
 			if let error = error {
@@ -33,7 +35,7 @@ class FirebaseFlashCardsRepository: FlashCardsRepository {
 										response: document["response"] as? String ?? "",
 										categoryID: "",
 										boxNumber: document["boxNumber"] as? Int ?? 1,
-										lastUpdateDate: document["lastUpdateDate"] as? Date ?? Date()
+										lastUpdateDate: document["lastUpdateDate"] as? Timestamp ?? Timestamp(date: Date())
 									)
 								)
 							}
@@ -50,6 +52,17 @@ class FirebaseFlashCardsRepository: FlashCardsRepository {
 				}
 			}
 		}
+	}
+	
+	func update(card: RestFlashCard, in deck: RestDeck, for userID: String, completion: @escaping (WebResponse<Void>) -> Void) {
+		let document = database.collection("users").document(userID).collection("decks").document(deck.id).collection("cards").document(card.id)
+		
+		document.setData([
+			"question": card.question,
+			"response": card.response,
+			"boxNumber": card.boxNumber,
+			"lastUpdateDate": card.lastUpdateDate
+		])
 	}
 	
 	func update(deck: RestDeck, for userID: String, completion: @escaping (WebResponse<Void>) -> Void) {

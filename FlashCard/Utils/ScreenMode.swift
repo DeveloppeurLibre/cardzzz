@@ -9,5 +9,5 @@ import Foundation
 
 enum ScreenMode {
 	case edition
-	case presentation
+	case presentation(deck: Deck)
 }

@@ -21,7 +21,7 @@ struct FlashCardListScreen: View {
 			ScrollView {
 				VStack {
 					ForEach(deck.cards) { card in
-						FlashCardCell(card: card)
+						FlashCardCell(card: card, deck: deck)
 						Divider()
 					}
 				}
@@ -35,10 +35,10 @@ struct FlashCardListScreen: View {
 			.padding()
 			.sheet(isPresented: $isPresentingCardCreationScreen, content: {
 				FlashCardDetailScreen(
-					deck: deck,
 					mode: .edition,
 					categories: [],
-					card: FlashCard(id: UUID().uuidString, question: "", response: "", boxNumber: 1, lastUpdateDate: Date())
+					card: FlashCard(id: UUID().uuidString, question: "", response: "", boxNumber: 1, lastUpdateDate: Date()),
+					deck: deck
 				)
 			})
 		}
