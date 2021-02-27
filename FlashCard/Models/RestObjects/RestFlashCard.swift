@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import Firebase
 
 struct RestFlashCard {
 	let id: String
@@ -13,5 +14,5 @@ struct RestFlashCard {
 	let response: String
 	let categoryID: String
 	let boxNumber: Int
-	let lastUpdateDate: Date
+	let lastUpdateDate: Timestamp
 }

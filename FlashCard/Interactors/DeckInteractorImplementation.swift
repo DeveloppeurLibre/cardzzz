@@ -10,6 +10,7 @@ import Firebase
 
 protocol DeckInteractor {
 	func loadDecks(completion: @escaping (WebResponse<[Deck]>) -> Void)
+	func update(card: FlashCard, in deck: Deck)
 	func update(deck: Deck)
 	func remove(deck: Deck)
 	func update(feedback: Feedback, for card: FlashCard, in deck: Deck)
@@ -46,6 +47,26 @@ class DeckInteractorImplementation: DeckInteractor {
 		}
 	}
 	
+	func update(card: FlashCard, in deck: Deck) {
+		guard let currentUser = Auth.auth().currentUser else { return }
+		let restDeck = RestDeck(
+			id: deck.id,
+			name: deck.name,
+			cards: map(flashCard: deck.cards)
+		)
+		let restCard = RestFlashCard(
+			id: card.id,
+			question: card.question,
+			response: card.response,
+			categoryID: "",
+			boxNumber: card.boxNumber,
+			lastUpdateDate: Timestamp(date: card.lastUpdateDate)
+		)
+		flashCardsRepository.update(card: restCard, in: restDeck, for: currentUser.uid) { response in
+			// TODO: (Quentin Cornu) To handle
+		}
+	}
+	
 	func update(deck: Deck) {
 		guard let currentUser = Auth.auth().currentUser else { return }
 		let restDeck = RestDeck(
@@ -74,18 +95,17 @@ class DeckInteractorImplementation: DeckInteractor {
 	
 	func update(feedback: Feedback, for card: FlashCard, in deck: Deck) {
 		guard let currentUser = Auth.auth().currentUser else { return }
+		card.boxNumber = feedback.boxNumber
+		card.lastUpdateDate = feedback.lastUpdateDate
+		deck.objectWillChange.send()
 		flashCardsRepository.update(cardID: card.id, deckID: deck.id, feedback: feedback, for: currentUser.uid) { response in
 			// TODO: (Quentin Cornu) To handle
 		}
 	}
 	
 	func getCardsToRecall(deck: Deck) -> [FlashCard] {
-		deck.cards.filter { nextDate(card: $0) > Date() }
-	}
-	
-	private func nextDate(card: FlashCard) -> Date {
-		let timeInterval = TimeInterval(60 * 60 * card.boxNumber)
-		return card.lastUpdateDate + timeInterval
+		let now = Date()
+		return deck.cards.filter { $0.nextDate() < now }
 	}
 	
 	private func map(flashCard: [FlashCard]) -> [RestFlashCard] {
@@ -98,7 +118,7 @@ class DeckInteractorImplementation: DeckInteractor {
 					response: card.response,
 					categoryID: card.category?.id.uuidString ?? "",
 					boxNumber: card.boxNumber,
-					lastUpdateDate: card.lastUpdateDate
+					lastUpdateDate: Timestamp(date: card.lastUpdateDate)
 				)
 			)
 		}
@@ -114,7 +134,7 @@ class DeckInteractorImplementation: DeckInteractor {
 					question: restCard.question,
 					response: restCard.response,
 					boxNumber: restCard.boxNumber,
-					lastUpdateDate: restCard.lastUpdateDate
+					lastUpdateDate: restCard.lastUpdateDate.dateValue()
 				)
 			)
 		}

@@ -9,10 +9,10 @@ import SwiftUI
 
 struct FlashCardDetailScreen: View {
 	
-	let deck: Deck
 	let mode: ScreenMode
 	let categories: [FlashCardCategory]
 	@ObservedObject var card: FlashCard
+	@ObservedObject var deck: Deck
 	@EnvironmentObject var appState: AppState
 	@Environment(\.presentationMode) var presentationMode
 	@Environment(\.interactors) var interactors: InteractorsContainer
@@ -39,8 +39,14 @@ struct FlashCardDetailScreen: View {
 				.padding(.leading)
 			}
 			MainButton(title: getButtonTitle(), color: .blue) {
-				deck.cards.append(card)
-				interactors.deckInteractor.update(deck: deck)
+				switch mode {
+					case .edition:
+						interactors.deckInteractor.update(card: card, in: deck)
+						break
+					case .presentation(let deck):
+						deck.cards.append(card)
+						interactors.deckInteractor.update(deck: deck)
+				}
 				presentationMode.wrappedValue.dismiss()
 			}
 			.padding()
@@ -69,20 +75,21 @@ struct FlashCardDetailScreen: View {
 struct FlashCardDetailScreen_Previews: PreviewProvider {
 	
 	@State static var newCard = FlashCard(id: UUID().uuidString, question: "", response: "", boxNumber: 1, lastUpdateDate: Date())
+	@State static var fakeDeck = Deck(id: "fakeID", name: "Fake Name")
 	
 	static var previews: some View {
 		Group {
 			FlashCardDetailScreen(
-				deck: Deck(id: UUID().uuidString, name: ""),
 				mode: .edition,
 				categories: FlashCardCategory.mockedData,
-				card: newCard
+				card: newCard,
+				deck: fakeDeck
 			)
 			FlashCardDetailScreen(
-				deck: Deck(id: UUID().uuidString, name: ""),
-				mode: .presentation,
+				mode: .presentation(deck: Deck(id: UUID().uuidString, name: "")),
 				categories: FlashCardCategory.mockedData,
-				card: FlashCard.mockedData.first!
+				card: FlashCard.mockedData.first!,
+				deck: fakeDeck
 			)
 		}
 	}

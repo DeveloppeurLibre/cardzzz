@@ -28,4 +28,9 @@ class FlashCard: Identifiable, ObservableObject {
 		self.boxNumber = boxNumber
 		self.lastUpdateDate = lastUpdateDate
 	}
+	
+	func nextDate() -> Date {
+		let timeInterval = TimeInterval(60 * 60 * 24 * (boxNumber - 1))
+		return lastUpdateDate + timeInterval
+	}
 }
