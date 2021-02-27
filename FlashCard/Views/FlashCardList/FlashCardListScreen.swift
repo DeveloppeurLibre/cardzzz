@@ -52,7 +52,7 @@ struct FlashCardListScreen: View {
 			.alert(isPresented: $isPresentingAlert, content: {
 				Alert(
 					title: Text("Are you sure?"),
-					message: Text("Are you sure to remove this deck? If yes, all of your cards will be list... 😔"),
+					message: Text("Are you sure to remove this deck? If yes, all of your cards will be lost... 😔"),
 					primaryButton: .cancel(),
 					secondaryButton: .destructive(Text("Remove"), action: {
 						appState.userData.decks.removeAll { $0.id == deck.id }
